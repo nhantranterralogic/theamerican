@@ -138,6 +138,7 @@
     }
     #WNAffRFDTV #WNFooter{
         background: white !important;
+        padding: 0px;
     }
     .footer.wn-bg-page-worldnow {
         background-color: #022c67;
