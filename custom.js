@@ -19,8 +19,48 @@ var AMERICAN = {
             .done(function (result) {
                 GLOBALDATA = result.features;
             });
-    }
+    },
     /*giang.nguyen*/
+    siteWideElements: {
+        navigationbar: function(){
+            // edit home icon
+            var $homelink = $wn('#WNColsAll > div:nth-child(1) > section > nav > a');
+            var href = $homelink.attr('href');
+            var $anthorNav = $wn('#WNColsAll > div:nth-child(1) > section > nav > div:nth-child(2)').clone();
+            $anthorNav.find('> nav').remove();
+            $anthorNav.find(' > a').attr('href', href).text('');
+            $anthorNav.addClass('home');
+            $homelink.replaceWith($anthorNav);
+            $wn('#WNColsAll > div:nth-child(1) > section > nav').css('display', 'table');
+            // init
+            var posBrading = 0;
+                posBrading = $wn('#WNColsAll > div:nth-child(1) > section.nav.wn-bg-page-nav').position().top;
+
+            var pos = $wn(document).scrollTop();
+            if (pos > posBrading) {
+                $wn('#WNColsAll > div:nth-child(1) > section.nav.wn-bg-page-nav').addClass('fixed-nav');
+            } else {
+                $wn('#WNColsAll > div:nth-child(1) > section.nav.wn-bg-page-nav').removeClass('fixed-nav');
+            }
+            $wn(document).scroll(function (event) {
+                var pos = $wn(document).scrollTop();
+                if (pos > posBrading) {
+                    $wn('#WNColsAll > div:nth-child(1) > section.nav.wn-bg-page-nav').addClass('fixed-nav');
+                } else {
+                    $wn('#WNColsAll > div:nth-child(1) > section.nav.wn-bg-page-nav').removeClass('fixed-nav');
+                }
+            });
+            $wn('#WNColsAll > div:nth-child(1) > section > nav > div > a').addClass('custom');
+            // select active nav item 
+            var idPage = wng_pageInfo.containerId;
+            $wn('#WNColsAll > div:nth-child(1) > section > nav > div.menu-cont').each(function(){
+                var currentId = $wn(this).find('> a').attr('href');
+                if ( currentId.indexOf( '/' + idPage ) > -1 ){
+                    $wn(this).addClass('active');
+                }
+            });
+        }
+    }
 
     /*nhan.tran*/
 
@@ -40,6 +80,7 @@ Worldnow.EventMan.event('bodystart', function () {
    /*nhan.tran*/
 
 });
+
 /**
  * col4 is ready to serve
  */
@@ -55,7 +96,7 @@ Worldnow.EventMan.event('WNCol4done', function () {
  */
 Worldnow.EventMan.event('wncol23done', function () {
    /* giang.nguyen */
-
+   
    /*nhan.tran*/
    
 });
@@ -82,13 +123,15 @@ window.onload = function () {
  */
 Worldnow.EventMan.event('documentready', function () {
     /* giang.nguyen */
-
+    
    /*nhan.tran*/
    
 });
 
 $(window).load(function () {
  /* giang.nguyen */
+ // cannot get at the documentready, bodyready.....
+AMERICAN.siteWideElements.navigationbar();
 
 /*nhan.tran*/
    
