@@ -307,11 +307,83 @@ var AMERICAN = {
             .done(function (result) {
                 GLOBALDATA = result.features;
             });
-    }
+    },
     /*giang.nguyen*/
 
     /*nhan.tran*/
-    
+    topStory: function () {
+        $wn('#csTsr > div.csTsrLinks').remove();
+        $wn('#csTsr > div.csTsrStage').addClass('TSAStage');
+        $wn('.TSAStage').css({
+            'position': 'relative'
+        });
+        $wn('#WNTopStoryWrap #csTsr .TSAStage .csSlide').each(function(){
+            $wn(this).width(650).height(366);
+            var headline = $wn(this).find('.csTsrBottom h4 a').text();
+            $wn(this).attr('title', headline);
+            $wn(this).find('.csTsrBottom').addClass('csTsrBottomNew');
+            var thumbnailURL = $wn(this).find('.csTsrTop a img').attr('src');
+            $wn(this).css('background', 'url(' + thumbnailURL + ')');
+            $wn(this).find('.csTsrTop a img').remove();
+            $wn(this).find('.csTsrBottom h4 a').css({
+                'padding': '10px 5px 0px 15px',
+                'display': 'block'
+            });
+        });
+
+        var currentIndex = 0;
+        var indexDisplay = currentIndex + 1;
+        var length = $wn('#WNTopStoryWrap #csTsr .TSAStage .csSlide').length;
+
+        var slider = '<span id="counterindex"><button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous" role="button" style="display: block;">Previous</button><div class="slick-counter">'+ indexDisplay + ' / ' + length +'</div><button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Next" role="button" style="display: block;">Next</button></span>';
+
+        $wn('#csTsr').append(slider);
+
+        $wn('#csTsr .slick-arrow.slick-next').click(function(){
+            $(this).css('opacity', '0.4');
+            if (currentIndex == length - 1) {
+                currentIndex = length - 1;
+            } else {
+                currentIndex = currentIndex + 1;
+            }
+
+            var indexDisplay = currentIndex + 1;
+            $wn('#csTsr #counterindex .slick-counter').text(indexDisplay + ' / ' + length);
+
+            $wn('#WNTopStoryWrap #csTsr .TSAStage .csSlide').each(function(index){
+                if (index == currentIndex) {
+                    $wn(this).fadeIn('fast');
+                } else {
+                    $wn(this).hide();
+                }
+            });
+
+            $(this).css('opacity', '1');
+
+        });
+
+        $wn('#csTsr .slick-arrow.slick-prev').click(function(){
+            if (currentIndex == 0) {
+                currentIndex = 0;
+            } else {
+                currentIndex = currentIndex - 1;
+            }
+
+            var indexDisplay = currentIndex + 1;
+            $wn('#csTsr #counterindex .slick-counter').text(indexDisplay + ' / ' + length);
+
+            $wn('#WNTopStoryWrap #csTsr .TSAStage .csSlide').each(function(index){
+                if (index == currentIndex) {
+                    $wn(this).fadeIn('fast');
+                } else {
+                    $wn(this).hide();
+                }
+            });
+
+        });
+
+
+    }
 }
 
 
@@ -327,6 +399,12 @@ Worldnow.EventMan.event('bodystart', function () {
 
    /*nhan.tran*/
 
+});
+
+
+
+$("body").load(function(){
+    AMERICAN.initData();
 });
 /**
  * col4 is ready to serve
@@ -345,7 +423,6 @@ Worldnow.EventMan.event('wncol23done', function () {
    /* giang.nguyen */
 
    /*nhan.tran*/
-   
 });
 
 /**
@@ -356,7 +433,7 @@ Worldnow.EventMan.event('bodydone', function () {
     /* giang.nguyen */
 
    /*nhan.tran*/
-   
+    AMERICAN.topStory();
 });
 window.onload = function () {
     /* giang.nguyen */
