@@ -23,6 +23,7 @@ var AMERICAN = {
     /*giang.nguyen*/
     siteWideElements: {
         navigationbar: function(){
+            var isSearch = false;
             // edit home icon
             var $homelink = $wn('#WNColsAll > div:nth-child(1) > section > nav > a');
             var href = $homelink.attr('href');
@@ -59,6 +60,45 @@ var AMERICAN = {
                     $wn(this).addClass('active');
                 }
             });
+            // insdert the search function
+            var html = '<div class="menu-cont search" style="width: 50px; height: 42px;">'+
+                '<form class="search" action="/search" method="get">'+
+                '<input type="hidden" name="vendor" value="ez"><input class="text" type="text" name="qu" size="10" value="" placeholder="Search">'+
+                '<button class="submit wn-accent-a" type="submit">Go</button></form></div>';
+            $wn('#WNColsAll > div:nth-child(1) > section.nav.wn-bg-page-nav > nav').append(html);
+            // events 
+            $wn('.menu-cont.search').click(function(e){
+                if( !isSearch ){
+                    $wn('#WNColsAll > div:nth-child(1) > section > nav > div > form').css('display', 'block');
+                    isSearch = true;
+                }else if ( e.target.nodeName != 'INPUT' ){
+                    $wn('#WNColsAll > div:nth-child(1) > section > nav > div > form').css('display', 'none');
+                    isSearch = false;
+                }
+            })
+            // // remove event search
+            // $wn(window).click(function (e) {
+            //     if ( (e.target.className.indexOf("menu-cont search") < 0 && e.target.nodeName != 'INPUT' && isSearch) ||
+            //          ( isClick && e.target.className.indexOf("menu-cont search") > -1 ) ) {
+            //         $wn('#WNColsAll > div:nth-child(1) > section > nav > div.menu-cont.search > form').hide();
+            //         isSearch = false;
+            //         isClick = false;
+            //     }
+            // });
+        },
+        footer: function(){
+            $wn('#WNCopyright > table').remove();
+            // clone top nav to bottom nav 
+            var $nav = $wn('#WNColsAll > div:nth-child(1) > section').clone();
+            $nav.find('nav.simple-a.sub').remove();
+            $wn('#WNCopyright').html($nav);
+            $wn('#WNCopyright > section').removeClass('fixed-nav');
+            $wn('#WNCopyright > section > nav > div.menu-cont').removeClass('active');
+            $wn('#WNCopyright > section > nav > div.menu-cont.search').remove();
+            // edit footer information
+            var html = '<section class="footer wn-bg-page-worldnow"><footer class="worldnow row wn-accent-a"><p>All content © Copyright 2000 - 2016 <a href="http://www.worldnow.com" target="_new">Frankly Media</a> and <span class="clientname" data-brandname="" data-clientname="The American"></span>. All Rights Reserved. For more information on this site, please read our <a href="/story/22901104/privacy-policy">Privacy Policy</a>, <a href="/category/267767/terms-of-use">Terms of Service</a>, and <a target="policy" href="/category/304378/press-the-american">Press</a>.</p></footer></section>';
+            $wn('#WNCopyright').append(html);
+
         }
     }
 
@@ -132,6 +172,7 @@ $(window).load(function () {
  /* giang.nguyen */
  // cannot get at the documentready, bodyready.....
 AMERICAN.siteWideElements.navigationbar();
+AMERICAN.siteWideElements.footer();
 
 /*nhan.tran*/
    
