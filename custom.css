@@ -3,6 +3,178 @@
 
 /* giang.nguyen */
 
+    /* nav styling */
+   section.nav.wn-bg-page-nav{
+        width: 100%;
+        background: #d6141b;
+        height: 42px;
+        
+    }
+   section.nav.wn-bg-page-nav.fixed-nav{
+        position: fixed;
+        top: 0px;
+        z-index: 999999;
+    }
+   section > nav.simple-a{
+        background: #d6141b;
+        height: 100%;
+        display: table;
+        display: none;
+    }
+    section.nav nav.simple-a a.custom {
+        font-family: 'Montserrat', sans-serif !important;
+        color: #d6141b;
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        line-height: 42px;
+        text-transform: uppercase;
+    }
+   section > nav.simple-a > *{
+        display: table-cell;
+    }
+    section.nav nav.simple-a  a{
+        padding: 0px !important;
+        display: block !important;
+        line-height: 42px;
+        text-align: center;
+    }
+    .menu-cont {
+        position: relative;
+        margin: 0px !important;
+        padding: 0px !important;
+    }
+    .menu-cont.active{
+        background: #263C9F;
+    }
+   section > nav > div.menu-cont.home{
+        width: 42px;
+        position: relative
+    }
+   section > nav.simple-a > div.menu-cont.home a{
+        background-image: url(http://ftpcontent.worldnow.com/professionalservices/clients/theamerican/images/home.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: auto auto;
+        width: 42px;
+        height: 42px;
+        position: absolute;
+    }
+    nav.sub {
+        top: 42px !important;
+        min-width: 100%;
+    }
+   section > nav.simple-a > a{
+        line-height: 0px !important;
+        height: 42px !important;
+    }
+    nav.sub.simple-a {
+        background: white;
+    }
+    section.nav nav.simple-a.sub  a{
+        color: black !important;
+    }
+    section.nav nav.simple-a.sub a {
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        text-decoration: none;
+        text-align: left;
+        line-height: 27px;
+        padding-left: 10px !important;
+        text-transform: capitalize;
+        padding-right: 10px !important;
+    }
+    section.nav nav.simple-a.sub  a:not(:last-child){
+        border-bottom: 1px solid #ece6e6;
+    }
+    section.nav nav.simple-a.sub  a:hover {
+        background-color: transparent !important;
+        color: #263C9F !important;
+    }  
+   section > nav.simple-a > div > form {
+        display: none;
+        position: absolute;
+        top: 41px;
+        right: 0px;
+        text-indent: 0 !important;
+        width: 260px;
+    }
+    .menu-cont.search{
+        position: relative;
+        background-image: url(http://ftpcontent.worldnow.com/professionalservices/clients/heartland/images/nav-search.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        text-indent: -999em;
+        width: 50px;
+        cursor: pointer;
+    }
+   section > nav.simple-a > div.menu-cont.search > form > input.text{
+        width: 200px;
+        height: 31px;
+        outline: none;
+        font-size: 20px;
+        padding-left: 15px;
+        border: 1px solid #ddd;
+        color: #b9b6b6;
+    }
+   section > nav.simple-a > div.menu-cont.search > form > button{
+        width: 60px;
+        border: 1px solid;
+        cursor: pointer;
+        margin: 0;
+        outline: none;
+        line-height: 28px;
+        font-size: 1.5em;
+    }
+    #WNCopyright > section a:hover {
+        background-color: transparent !important;
+        text-decoration: none !important;
+    }
+
+    /* footer */
+
+    #WNCopyright{
+        width: 100% !important;
+    }
+    #WNAffRFDTV #WNFooter{
+        background: white !important;
+        padding: 0px;
+    }
+    .footer.wn-bg-page-worldnow {
+        background-color: #022c67;
+    }
+    footer.worldnow {
+        padding: 10px 0;
+        min-height: 44px;
+    }
+
+    footer.worldnow {
+        
+    }
+    .row {
+        width: 100%;
+        clear: both;
+    }
+    footer.worldnow p, footer.worldnow a, footer.worldnow a:hover {
+        font-family: arial,sans-serif;
+        font-size: 10px;
+        color: #fff;
+    }
+    footer.worldnow p {
+        background: none;
+        padding-left: 0;
+        text-align: center;
+        line-height: 24px;
+    }
+    /*footer.worldnow p {
+        margin: 0 auto;
+        padding-left: 110px;
+        background: url(http://ftpcontent.worldnow.com/wncorp/logos/worldnow_white.png) no-repeat left center;
+        background-size: 99px;
+    }*/
+    footer.worldnow a {
+        font-weight: bold;
+    }
 
 /* nhan.tran */
 #csTsr > div.csTsrStage.TSAStage {
