@@ -100,10 +100,9 @@ var AMERICAN = {
             $wn('#WNCopyright').append(html);
 
         }
-    }
+    },
 
     /*nhan.tran*/
-<<<<<<< HEAD
     topStory: function () {
         $wn('#csTsr > div.csTsrLinks').remove();
         $wn('#csTsr > div.csTsrStage').addClass('TSAStage');
@@ -177,9 +176,6 @@ var AMERICAN = {
 
 
     }
-=======
-
->>>>>>> 9102e6386e6f308b52812175d341851bee8bf26f
 }
 
 
@@ -197,14 +193,11 @@ Worldnow.EventMan.event('bodystart', function () {
 
 });
 
-<<<<<<< HEAD
-
 
 $("body").load(function(){
     AMERICAN.initData();
 });
-=======
->>>>>>> 9102e6386e6f308b52812175d341851bee8bf26f
+
 /**
  * col4 is ready to serve
  */
