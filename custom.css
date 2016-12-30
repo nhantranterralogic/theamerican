@@ -175,5 +175,136 @@
     footer.worldnow a {
         font-weight: bold;
     }
-
+    /* */
+    #WNCols234-5 {
+     border-image:none !important;
+    }
+    #WNDS29 > div > div:nth-child(8){
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+    }
+    .displaySize .header{
+        border-image:none !important;
+    }
+    #WNAffRFDTV {
+        background-image: none !important;
+    }
+    .displaySize .header h3 {
+        background: #e5e5e5;
+        height: 31px;
+    }
+    .displaySize .header .text.abridgedHeadline, .displaySize .header .text, .displaySize.displaySizeId22 .header .text {
+        font-family: 'Montserrat', sans-serif !important;
+        color: #000 !important;
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        line-height: 31px !important;
+        padding-left: 10px !important;
+        margin: 0 !important;
+        text-transform: uppercase;
+    }
+    #DisplaySizeId-7 .wnItem.header .text.abridgedHeadline{
+        max-width: 500px !important;
+    }
 /* nhan.tran */
+#csTsr > div.csTsrStage.TSAStage {
+    width: 100%;
+}
+
+#WNTopStoryWrap #csTsr .TSAStage .csSlide {
+    background-size: contain!important;
+    background-repeat: no-repeat!important;
+    background-position: center center!important; 
+}
+
+.csTsrBottomNew {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    background-color: #000;
+    width: 101%;
+    margin: 0px!important;
+}
+
+ #WNCol23 #WNCol23Top #csTsr .wnDSContainer-standard a {
+    padding: 10px 5px 0px 15px;
+    display: block;
+    font-size: 24px!important;
+    font-family: Verdana,Arial,sans-serif!important;
+}
+
+#csTsr .csSlide .csTsrBottom .csSummary {
+    color: #fff;
+    font: normal 14px Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 17px;
+    margin: 5px 130px 10px 15px;
+}
+
+#csTsr .csSlide .csTsrTop {
+    text-align: center;
+    background-color: transparent!important;
+    width: 100%;
+    height: 100%;
+}
+
+#csTsr .csSlide .csTsrTop a{
+    height: 100%;
+}
+
+
+.slick-counter {
+    position: absolute;
+    bottom: 30px;
+    right: 10px;
+    background-color: #022c67;
+    padding: 5px 30px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#csTsr .slick-arrow {
+    position: absolute;
+    text-indent: -999em;
+    bottom: 36px;
+    width: 8px;
+    height: 14px;
+    background-image: url("http://ftpcontent.worldnow.com/professionalservices/clients/theamerican/images/tsr-arrows.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: transparent;
+    border: none;
+    z-index: 1;
+}
+
+#csTsr .slick-arrow {
+    position: absolute;
+    text-indent: -999em;
+    bottom: 36px;
+    width: 8px;
+    height: 14px;
+    background-image: url("http://ftpcontent.worldnow.com/professionalservices/clients/theamerican/images/tsr-arrows.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: transparent;
+    border: none;
+    z-index: 1;
+}
+
+#csTsr .slick-arrow.slick-next {
+    right: 20px;
+    background-position: -8px 0;
+}
+
+#csTsr .slick-arrow.slick-prev {
+    right: 80px;
+    background-position: 4px 0;
+}
+
+#csTsr {
+    position: relative;
+}
