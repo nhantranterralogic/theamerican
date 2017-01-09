@@ -85,6 +85,20 @@ var AMERICAN = {
             //         isClick = false;
             //     }
             // });
+            // remove old background
+            $wn('#WNAffRFDTV > img:first').remove();
+            // remove VIDEO UB if this not removed
+            if ($wn('#WNDS70 > div > .wnDVUtilityBlock').length) {
+                $wn('#WNDS70 .wnDVUtilityBlock').css('visibility', 'hidden');
+            }
+            $wn('#WNBrandingImage').appendTo('.countdown').css({
+                'position': 'absolute',
+                'left': '335px',
+                'top': '-45px'
+            });
+
+            $wn('#WNColsAll section nav .menu-cont:nth-child(9)').insertAfter('#WNColsAll section nav .menu-cont.home');
+
         },
         footer: function(){
             $wn('#WNCopyright > table').remove();
@@ -174,7 +188,66 @@ var AMERICAN = {
 
         });
 
-    }
+    },
+
+    countdown: function(time){
+
+        var deadline = time,
+        timeinterval;
+
+        $('#WNBranding').prepend('<div class="countdown"><div class="day"></div><div class="hour"></div><div class="min"></div><div class="sec"></div></div>');
+
+        function getTimeRemaining(endtime){
+
+            var t = Date.parse(endtime) - Date.parse(new Date()),
+                s = Math.floor((t/1000)%60),
+                m = Math.floor((t/1000/60)%60),
+                h = Math.floor((t/(1000*60*60))%24),
+                d = Math.floor(t/(1000*60*60*24));
+
+            return {
+                't': t,
+                'd': d,
+                'h': h,
+                'm': m,
+                's': s
+            }
+	}
+
+	function initializeClock(cs, endtime){
+	  	var $clock = $(cs);
+
+		function updateClock(){
+		  var t = getTimeRemaining(endtime);
+
+		  $clock.find('.day').html(('0' + t.d).slice(-2));
+		  $clock.find('.hour').html(('0' + t.h).slice(-2));
+		  $clock.find('.min').html(('0' + t.m).slice(-2));
+		  $clock.find('.sec').html(('0' + t.s).slice(-2));
+
+		  if(t.t<=0){
+			$clock.find('.day').html('');
+			$clock.find('.hour').html('');
+			$clock.find('.min').html('');
+			$clock.find('.sec').html('');
+		    clearInterval(timeinterval);
+		  }
+		}
+		updateClock();
+		var timeinterval = setInterval(updateClock,1000);
+
+	}	
+	
+	initializeClock('.countdown', deadline);
+
+	return;
+  },
+
+  socialTool: function() {
+      var tools = '<li class="tools"><ul id="CDEV-branding-social-icons" class="cdev-branding-social-icons"><li class="facebook"><a href="https://www.facebook.com/RFDTVTheAMERICAN" aria-label="Facebook" target="_blank"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i></a></li><li class="twitter"><a href="https://twitter.com/RFDTVAmerican" aria-label="twitter" target="_blank"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a></li><li class="youtube"><a href="https://www.youtube.com/user/RFDTVnetwork" aria-label="Youtube" target="_blank"><i class="fa fa-youtube fa-fw" aria-hidden="true"></i></a></li><li class="rss"><a href="/?clienttype=rss" aria-label="RSS" target="_blank"><i class="fa fa-rss fa-fw" aria-hidden="true"></i></a></li><li class="contact"><a href="mailto:Events@rfdtv.com" aria-label="Contact Us"><i class="fa fa-envelope fa-fw" aria-hidden="true"></i></a></li></ul><a class="cdev-back" href="http://www.rfdtv.com">Back to RFDTV.COM</a><ul class="membercenter inline wnMemberCenter wnMemberCenter-loggedOut" refresh="1"></ul></li>';
+
+      $wn(tools).appendTo('#WNBranding');
+  }
 }
 
 
@@ -246,8 +319,11 @@ Worldnow.EventMan.event('documentready', function () {
 $(window).load(function () {
  /* giang.nguyen */
  // cannot get at the documentready, bodyready.....
+AMERICAN.countdown('2017/02/19 00:00:00 GMT-0600');
 AMERICAN.siteWideElements.navigationbar();
+AMERICAN.socialTool();
 AMERICAN.siteWideElements.footer();
+
 
 /*nhan.tran*/
    

@@ -188,6 +188,7 @@
     }
     #WNAffRFDTV {
         background-image: none !important;
+        background-color: black;
     }
     .displaySize .header h3 {
         background: #e5e5e5;
@@ -307,4 +308,150 @@
 
 #csTsr {
     position: relative;
+}
+
+#WNColsAll {
+    background-color: white;
+}
+
+.countdown {
+    color: #fff;
+    width: 250px;
+    height: 185px;
+    position: relative;
+    background-image: url("http://ftpcontent.worldnow.com/professionalservices/clients/theamerican/images/countdown.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 35px;
+}
+
+.countdown .day {
+    width: 48px;
+    height: 42px;
+    position: absolute;
+    top: 74px;
+    left: 9px;
+}
+
+.countdown .hour {
+    width: 48px;
+    height: 42px;
+    position: absolute;
+    top: 74px;
+    left: 70px;
+}
+
+.countdown .min {
+    width: 48px;
+    height: 42px;
+    position: absolute;
+    top: 74px;
+    left: 131px;
+}
+
+.countdown .sec {
+    width: 48px;
+    height: 42px;
+    position: absolute;
+    top: 74px;
+    left: 194px;
+}
+
+#WNBranding .tools {
+    background: none !important;
+    padding: 33px 0;
+    width: 185px;
+    position: absolute;
+    top: 45px;
+    right: 0px;
+}
+
+#WNBranding .tools .cdev-branding-social-icons {
+    float: none;
+    list-style: none;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+#WNBranding .tools .cdev-branding-social-icons li.facebook {
+    background-color: #3152bf;
+}
+
+#WNBranding .tools .cdev-branding-social-icons li:first-child {
+    margin-left: 0;
+}
+
+#WNBranding .tools .cdev-branding-social-icons li {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+#WNBranding .facebook {
+    color: #3b5998;
+}
+
+#WNBranding .tools .cdev-branding-social-icons li a, header.simple-a li.tools .cdev-branding-social-icons li a:hover {
+    color: #fff;
+}
+
+#WNBranding .tools .cdev-branding-social-icons li .fa-fw {
+    width: 100%;
+    text-align: center;
+    font-size: .85rem;
+    line-height: 24px;
+}
+
+#WNBranding .tools .cdev-branding-social-icons li.twitter {
+    background-color: #19b8f3;
+}
+
+#WNBranding .twitter {
+    color: #00aced;
+}
+
+#WNBranding .tools .cdev-branding-social-icons li.youtube {
+    background-color: #cd0702;
+}
+
+#WNBranding .youtube {
+    color: #bb0000;
+}
+
+#WNBranding .tools .cdev-branding-social-icons li.rss {
+    background-color: #fc940e;
+}
+
+#WNBranding .rss {
+    color: #FA9B39;
+}
+
+#WNBranding .tools .cdev-branding-social-icons li.contact {
+    background-color: #808080;
+}
+
+#WNBranding .tools .cdev-back {
+    width: 100%;
+    background-color: #d72127;
+    display: block;
+    padding: 5px 0;
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#WNBranding .tools > * {
+    float: right;
+    clear: both;
 }
