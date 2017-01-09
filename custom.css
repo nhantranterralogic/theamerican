@@ -53,11 +53,8 @@
    section > nav.simple-a > div.menu-cont.home a{
         background-image: url(http://ftpcontent.worldnow.com/professionalservices/clients/theamerican/images/home.png);
         background-repeat: no-repeat;
-        background-position: center center;
-        background-size: auto auto;
         width: 42px;
-        height: 42px;
-        position: absolute;
+        height: 27px;
     }
     nav.sub {
         top: 42px !important;
