@@ -452,3 +452,24 @@
     float: right;
     clear: both;
 }
+
+
+.grid-row {
+    display: table;
+    width: 100%;
+}
+
+.displaySize .feature {
+    display: table-cell!important;
+    margin-right: 6px;
+}
+
+.displaySizeId-4 .feature.odd {
+    padding: 1em .5em;
+    clear: none!important;
+    float: left!important;
+    width: 32%!important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}

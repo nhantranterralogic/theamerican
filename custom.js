@@ -247,6 +247,18 @@ var AMERICAN = {
       var tools = '<li class="tools"><ul id="CDEV-branding-social-icons" class="cdev-branding-social-icons"><li class="facebook"><a href="https://www.facebook.com/RFDTVTheAMERICAN" aria-label="Facebook" target="_blank"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i></a></li><li class="twitter"><a href="https://twitter.com/RFDTVAmerican" aria-label="twitter" target="_blank"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a></li><li class="youtube"><a href="https://www.youtube.com/user/RFDTVnetwork" aria-label="Youtube" target="_blank"><i class="fa fa-youtube fa-fw" aria-hidden="true"></i></a></li><li class="rss"><a href="/?clienttype=rss" aria-label="RSS" target="_blank"><i class="fa fa-rss fa-fw" aria-hidden="true"></i></a></li><li class="contact"><a href="mailto:Events@rfdtv.com" aria-label="Contact Us"><i class="fa fa-envelope fa-fw" aria-hidden="true"></i></a></li></ul><a class="cdev-back" href="http://www.rfdtv.com">Back to RFDTV.COM</a><ul class="membercenter inline wnMemberCenter wnMemberCenter-loggedOut" refresh="1"></ul></li>';
 
       $wn(tools).appendTo('#WNBranding');
+  },
+
+  headlineBox2B: function() {
+        $('#DisplaySizeId-4 > ul > li').unwrap();
+
+        $('#DisplaySizeId-4 > li:gt(8)').remove();
+
+        var element = $("#DisplaySizeId-4 > li:gt(0)");
+        for(var i = 0; i < element.length; i+=3) {
+            element.slice(i, i+3).wrapAll("<div class='grid-row'></div>");
+        }
+
   }
 }
 
